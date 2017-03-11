@@ -1,2 +1,2 @@
 test 1
-time: one day
+time: half one day
