@@ -23,9 +23,6 @@ for(j in 1:nlevels(rs$anest)){
 result <- list(maxnum,id)
 
 
-#去掉不属于第j类资产的行
-#
-
 
 
 rs <- na.omit(ds) %>%
