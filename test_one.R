@@ -9,3 +9,7 @@ findNum <- function(y,x,I){
 }
 y <- c(1,0,0,1,1,1,0,1,1)
 findNum(y,1,2)
+
+GOTIT
+
+IE
