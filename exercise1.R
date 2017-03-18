@@ -1,3 +1,8 @@
+ds<-data.frame(id=seq(10,80,by=10),
+               anest=c("baker","baker",rep("dow",6)),
+               start=c("08:00","09:00","09:00","08:00","10:00","12:30","13:30","18:00"),
+               end=c("11:00","13:00","15:30","13:30","11:30","13:30","14:30","19:00"))
+library(dplyr)
 count <- list()
 rs <- na.omit(ds) %>%
   mutate(start=sapply(ds$start,as.character)) %>%
@@ -25,23 +30,3 @@ result <- list(maxnum,id)
 
 
 
-rs <- na.omit(ds) %>%
-  mutate(start=sapply(ds$start,as.character)) %>%
-  mutate(end=sapply(ds$end,as.character))  %>%
-  group_by(anest) %>%
-  lapply(findResult)
-  
-findResult <- function(x){
-  a <- vector(length = nlevels(ds$anest))
-  count <- vector(length = length(ds$end))
-  for(i in 1:length(rs$end))
-    for(z in 1:length(rs$start)){
-      if(rs$start[z]<rs$end[i]){
-        count[i] = count[i]+1
-        d <- NULL
-        d <- c(d,rs$id[z])
-      }
-    }
-  return(count)
-  return(c)
-}
