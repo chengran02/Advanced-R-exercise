@@ -10,7 +10,7 @@ rs <- na.omit(ds) %>%
 id <- list()
 f <- list()
 maxnum <- list()
-for(j in 1:nlevels(rs$anest)){
+for(j in 1:nlevels(rs$anest)){  #对每类资产遍历
   ars <- rs[which(rs$anest==levels(rs$anest)[j]),]
   f[[as.character(j)]] <- list()
   count[[as.character(j)]] <- vector(length = length(ars$end))
